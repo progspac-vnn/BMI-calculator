@@ -1,21 +1,26 @@
-# Converter ---> progspacvnn
+# BMI Calculator ---> progspacvnn
+print('********************************************************************************************')
+print('////////////////BODY MASS INDEX CALCULATOR//////////////')
 
-print('/////// BINARY TO DECIMAL CONVERTER ///////')
-a = int(input('Enter 1st digit\n'))
-b = int(input('Enter 2nd digit\n'))
-c = int(input('Enter 3rd digit\n'))
-d = int(input('Enter 4th digit\n'))
-e = int(input('Enter 5th digit\n'))
-f = int(input('Enter 6th digit\n'))
-g = int(input('Enter 7th digit\n'))
+# Your Details
+feet = int(input('Ft\n')) 
+inch = float(input('Inch\n'))
+weight = int(input('Enter Your Weight Here:\n'))
 
-l = [a,b,c,d,e,f,g]
-s = 0
+# Calculation
+total_height = (feet*12) + inch
+total_height_meters = (total_height * 0.0254)
+BMI = (weight/(total_height_meters**2))
 
-for i in range(0,7):
-    l[i] = l[i] * (2**(6-i))
-for i in range(0,7):
-    s = s + l[i]
+# Result
+print(f'''##### HERE IS YOUR BMI ##### 
+---------> {BMI}''')  
 
-print('/////// HERE IS YOUR RESULT ///////')
-print(f'---------> {s}')
+if BMI < 18.5:
+    print('''UNDERWEIGHT. Choose nutrient-rich foods. ''')
+if  18.5 <= BMI <= 24.9:
+    print('''NORMAL. Leave out the word "weight". Keep working hard. ''')
+if 25 <= BMI <= 29.9:
+    print('''OVERWEIGHT. Encourage a healthy lifestyle, not just weight loss. ''')
+if BMI >=30:
+    print('''OBESE. Focus on process goals. ''')
